@@ -1,0 +1,39 @@
+section {
+
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    font-family: 'Medula One', cursive;
+    font-size: 110%;
+
+}
+
+.nameandsec{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.desc{
+
+    margin-top: -4%;
+    color: black;
+    
+}   
+
+.suge{
+
+    display: flex;
+    text-align: right;
+    
+    
+    color: white;
+    
+
+}
+
+
+
+
+    

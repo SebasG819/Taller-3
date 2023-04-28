@@ -1,0 +1,39 @@
+section{
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 2%;
+}
+
+img{
+
+        min-width: 6%;
+        max-width: 6%;
+        min-height: 6%;
+        max-height: 6%;
+}
+
+h2{
+    margin-left: 0.5%;
+    color: aliceblue;
+    font-family: 'Medula One', cursive;
+    font-size: 220%;
+
+
+}
+
+@media screen and (max-width: 400px){
+
+    section{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 2%;
+        width: 100px;
+        display: none;
+    }    
+
+    
+  }
