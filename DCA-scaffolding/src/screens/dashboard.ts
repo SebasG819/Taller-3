@@ -39,7 +39,7 @@ class DashBoard extends HTMLElement {
                     "best-sale"
                     ) as bestsale;
                     cards.setAttribute(attribute.titulo, person.title);
-                    cards.setAttribute(attribute.image, person.image);
+                    cards.setAttribute(attribute.icon, person.icon);
                     this.dbs.push(cards);
                  });     
 
@@ -107,7 +107,6 @@ class DashBoard extends HTMLElement {
                 this.psb.forEach((Sidecards)   =>   {
                 pside.appendChild(Sidecards)
                 });
-
 
                 const under = this.ownerDocument.createElement("section" ) 
                 under.className = `under`

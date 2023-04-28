@@ -1,27 +1,27 @@
 interface DataDBS {
-    image: string;
+    icon: string;
     title: string;
     
 }
 
 const dbsdata: DataDBS[] = [
     {
-        image: "../pics/user",
+        icon: "../pics/user",
         title: "Profile",
         
     },
     {
-        image: "../pics/message-circle.png",
+        icon: "../pics/message-circle.png",
         title: "Message",
         
     },
     {
-        image: "../pics/search.png",
+        icon: "../pics/search.png",
         title: "Search",
         
     },
     {
-        image: "../pics/device-nintendo.png",
+        icon: "../pics/device-nintendo.png",
         title: "Random Player",
         
     },

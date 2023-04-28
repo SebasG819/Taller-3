@@ -1,19 +1,19 @@
 import styles from './card.css';
 
 export enum attribute {
-    "image" = "image",
+    "icon" = "icon",
     "titulo" = "titulo"
 
 }
 
 class bestsale extends HTMLElement {
-    image?: string;
+    icon?: string;
     titulo?: string;
     
     static get observedAttributes() {
         const attrs: Record<attribute, null> = {
         
-            image: null,
+            icon: null,
             titulo: null,
         };
         return Object.keys(attrs);
@@ -47,7 +47,7 @@ class bestsale extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-               <img src="${this.image}">
+               <img src="${this.icon}">
                 <h2>${this.titulo}</h2>
                 </section>
                 <div><div>
