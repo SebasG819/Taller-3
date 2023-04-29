@@ -1,8 +1,4 @@
-interface DataUNPH {
-    image: string;
-    
-    
-}
+import {DataUNPH} from '../types/phonedata'
 
 const unphdata: DataUNPH[] = [
     {

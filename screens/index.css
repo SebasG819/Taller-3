@@ -1,10 +1,9 @@
 
 .feat{
-    margin-top: 1%;
     position: fixed;
-    border-right: 0.0625em solid  #e6ecf0;
-    padding-right: 1%;
     height: 100%;
+    border-right: 0.0625em solid  #e6ecf0;
+    width: 25%;
 }
 
 h1{

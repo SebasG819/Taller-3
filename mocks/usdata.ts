@@ -1,22 +1,17 @@
-interface DataSFY {
-    image: string;
-    name: string;
-    description: string;
-    
-}
+import { DataSFY } from './../types/usdata';
 
 const sgfydata: DataSFY[] = [
     {
         
         
-            image: "../profile-ph/user2.png",
+            image: "../../src/pics/user2.png",
             name: "@Elsilvana422",
             description : "Silvaneitor3000" 
     
     },
 
     {
-            image: "../profile-ph/user3.png",
+            image: "../../src/pics/user3.png",
             name: "@LanutriaFotógrafa",
             description : "Dont Care"
     }

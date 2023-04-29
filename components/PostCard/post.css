@@ -70,3 +70,6 @@ body {
 .post-buttons button:hover {
   background-color: #3e8e41;
 }
+::-webkit-scrollbar{
+  overflow-y: none;
+}
