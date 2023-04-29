@@ -1,0 +1,19 @@
+/* body{
+    background-repeat: no-repeat;
+    background-attachment: fixed    ;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#c336d8, #6219ee);
+    background-image: url(fondo.png);
+    height: 50%;
+    overflow-x: hidden;
+} */
+
+.fondo{
+    background-size: cover;
+    position: fixed;
+    height: 1100px;
+    width: 1950px;
+    margin-top: -0.625em;
+    margin-left: -0.625em;
+}
