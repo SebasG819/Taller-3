@@ -1,0 +1,60 @@
+
+.feat{
+    position: fixed;
+    height: 100%;
+    border-right: 0.0625em solid  #e6ecf0;
+    width: 25%;
+}
+
+h1{
+    font-size: 260%;
+    font-family: 'Press Start 2P', cursive;
+    color: aliceblue;
+}
+
+.main{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -100%;
+    
+}
+.searchbar{
+    position: relative;
+    left: 33%;
+    transform: translateZ(50px);
+
+}
+.side
+{
+    height: 100%;
+    position: fixed;
+    left: 75%;
+    border-left: 0.0625em solid  #e6ecf0;
+    padding-left: 1%;   
+}
+
+h3{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.701);
+    position: relative;
+    font-family: 'Medula One', cursive;
+    font-size: 200%;
+
+}
+
+
+@media screen and (max-width: 400px){
+
+    .feat{
+
+        margin-top: 1%;
+        position: fixed;
+        display: none;
+    }
+    
+  }

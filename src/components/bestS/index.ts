@@ -48,7 +48,7 @@ class bestsale extends HTMLElement {
                 this.shadowRoot.innerHTML = `
                 <section>
                <img src="${this.icon}">
-                <h2>${this.titulo}</h2>
+                <h2><a href="#">${this.titulo}</a></h2>
                 </section>
                 <div><div>
                 `;

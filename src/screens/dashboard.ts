@@ -65,23 +65,23 @@ class DashBoard extends HTMLElement {
                          });  
 
 
-                         sgfydata.forEach((person) => {
-                            const pside2 = this.ownerDocument.createElement(
-                                "suge-you"
-                                ) as sugesforyou;
-                                pside2.setAttribute(Attri.name, person.name);
-                                pside2.setAttribute(Attri.image, person.image);
-                                pside2.setAttribute(Attri.description, person.description);
-                                this.sgfy.push(pside2);
-                             });     
+                    sgfydata.forEach((person) => {
+                        const pside2 = this.ownerDocument.createElement(
+                            "suge-you"
+                             ) as sugesforyou;
+                            pside2.setAttribute(Attri.name, person.name);
+                            pside2.setAttribute(Attri.image, person.image);
+                            pside2.setAttribute(Attri.description, person.description);
+                            this.sgfy.push(pside2);
+                        });     
                              
-                             unphdata.forEach((person) => {
-                                const under = this.ownerDocument.createElement(
-                                    "under-phone"
-                                    ) as underph;
-                                    under.setAttribute(attr.image, person.image);
-                                    this.unph.push(under);
-                                 });       
+                    unphdata.forEach((person) => {
+                        const under = this.ownerDocument.createElement(
+                             "under-phone"
+                             ) as underph;
+                             under.setAttribute(attr.image, person.image);
+                             this.unph.push(under);
+                        });       
         }
 
         
