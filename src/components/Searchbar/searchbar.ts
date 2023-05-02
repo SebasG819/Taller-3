@@ -1,6 +1,6 @@
 import styles from './searchbar.css';
 
-export default class searchbar extends HTMLElement{
+export default class AppSearchbar extends HTMLElement{
     constructor(){
         super()
         this.attachShadow({mode:"open"})
@@ -13,12 +13,12 @@ export default class searchbar extends HTMLElement{
     render(){
         if(this.shadowRoot)
         this.shadowRoot.innerHTML=` 
-        <section>
-            <input type="Search...">
-        </section>`        
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+        </div>`        
         const css = this.ownerDocument.createElement("style");
             css.innerHTML = styles;
             this.shadowRoot?.appendChild(css);
     }
 }
-customElements.define("searchbar-card", searchbar);
+customElements.define("searchbar-card", AppSearchbar);

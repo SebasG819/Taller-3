@@ -49,7 +49,7 @@ class DashBoard extends HTMLElement {
                         ) as profileside;
                         pside.setAttribute(Attribut.name, person.name);
                         pside.setAttribute(Attribut.image, person.image);
-                        pside.setAttribute(Attribut.description, person.description);
+                        pside.setAttribute(Attribut.gameprofile, person.gameprofile);
                         this.psb.push(pside);
                      });     
                      trips.forEach((user) => {

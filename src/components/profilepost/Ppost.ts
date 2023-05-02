@@ -1,15 +1,13 @@
-import styles from './post.css';
+import styles from './ppost.css';
 
-export enum Attribute1 {
+export enum Attribute2 {
     "username" = "username",
     "userimage" = "userimage",
-    "ptitle" = "ptitle",
-    "ptext" = "ptext",
     "postimage" = "postimage",
 }
 
 
-export default class PostCard extends HTMLElement{
+export default class profilepost extends HTMLElement{
     username?: string;
     userimage?: string;
     ptitle?: string;
@@ -17,11 +15,9 @@ export default class PostCard extends HTMLElement{
     postimage?: string;
     
     static get observedAttributes() {
-        const attrs: Record<Attribute1, null> = {
+        const attrs: Record<Attribute2, null> = {
             username: null,
             userimage: null,
-            ptitle: null,
-            ptext: null,
             postimage: null,
         };
         return Object.keys(attrs);
@@ -34,7 +30,7 @@ export default class PostCard extends HTMLElement{
 
     
     attributeChangedCallback(
-        propName: Attribute1,
+        propName: Attribute2,
         _: string | undefined,
         newValue: string | undefined
         ) {
@@ -46,32 +42,21 @@ export default class PostCard extends HTMLElement{
 
             this.render();
         }
-    connectedCallBack(){
+    connectedCallback(){
         this.render();
     }
 
     render(){
         if(this.shadowRoot)this.shadowRoot.innerHTML = `
-        <head>
-        <title>${this.ptitle}</title>
-        </head>
-        <body>
-         <div class="post-container">
-      <div class="user-info">
-        <img src="${this.userimage}" alt="Foto de usuario">
-        <div class="user-text">
+        <div class="post-container">
+        <div class="user-info">
+          <img src="${this.userimage}" alt="user-profile">
           <h2>@${this.username}</h2>
-          <p>${this.ptext}</p>
         </div>
-      </div>
-      
-      <img class="post-image" src="${this.postimage}" alt="Imagen de post">
-      <div class="post-buttons">
-        <button>Me gusta</button>
-        <button>Comentar</button>
-        <button>Compartir</button>
-      </div>
-    </div>
+        <div class="post-image">
+          <img src="${this.postimage}" alt="post-image">
+        </div>
+        </div>
         `;
         const css = this.ownerDocument.createElement("style");
         css.innerHTML = styles;
@@ -79,4 +64,4 @@ export default class PostCard extends HTMLElement{
     }
 }
 
-customElements.define('post-card', PostCard);
+customElements.define('profilepost-card', profilepost);

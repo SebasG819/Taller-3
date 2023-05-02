@@ -1,23 +1,26 @@
-import styles from './scard.css';
+import styles from './profile.css';
 
-export enum Attribut {
+export enum Attribute3 {
     "image" = "image",
     "name" = "name",
-    "gameprofile" = "gameprofile"
+    "gameprofile" = "gameprofile",
+    "description" = "description"
 
 }
 
-class profileside extends HTMLElement {
+export default class profileApp extends HTMLElement {
     image?: string;
     name?: string;
     gameprofile?: string
+    description?: string
     
     static get observedAttributes() {
-        const attrs: Record<Attribut, null> = {
+        const attrs: Record<Attribute3, null> = {
         
             image: null,
             name: null,
-            gameprofile: null
+            gameprofile: null,
+            description: null,
         };
         return Object.keys(attrs);
     }
@@ -32,7 +35,7 @@ class profileside extends HTMLElement {
     }
     
     attributeChangedCallback(
-        propName: Attribut,
+        propName: Attribute3,
         _: string | undefined,
         newValue: string | undefined
         ) {
@@ -50,11 +53,14 @@ class profileside extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-               <img src="${this.image}">
-               <section class = "nameandsec">
+                <div class="user-info">
+                <img src="${this.image}">
+                <div class="name-and-game">
                 <h2>${this.name}</h2>
-                <p class = "desc"> ${this.gameprofile}</p>
-                </section>
+                <p class="game-profile">${this.gameprofile}</p>
+                </div>
+                </div>
+                <p class="description">${this.description}</p>
                 </section>
                 `;
                 const css = this.ownerDocument.createElement("style");
@@ -65,5 +71,4 @@ class profileside extends HTMLElement {
         }
     }
     
-customElements.define("profile-side", profileside);
-export default profileside;
+customElements.define("profile-card", profileApp);
