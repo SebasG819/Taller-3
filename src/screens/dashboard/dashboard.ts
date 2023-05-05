@@ -5,6 +5,7 @@ import psbdata from "../../mocks/psb";
 import trips from "../../mocks/trips";
 import sgfydata from "../../mocks/usdata";
 import unphdata from "../../mocks/phonedata";
+import Trips from "../../services/fetch"
 
 
 
@@ -16,8 +17,6 @@ import underph, {attr} from "../../components/undercell/index";
 import { Screens } from '../../types/navigations';
 import { navigate } from '../../store/action';
 import { dispatch } from '../../store/index';
-
-
 
 
 
@@ -44,18 +43,6 @@ class DashBoard extends HTMLElement {
                         pside.setAttribute(Attribut.gameprofile, person.gameprofile);
                         this.psb.push(pside);
                      });     
-                     trips.forEach((user) => {
-                        const postg = this.ownerDocument.createElement(
-                            "post-card"
-                            ) as PostCard;
-                            postg.setAttribute(Attribute1.username, user.username);
-                            postg.setAttribute(Attribute1.userimage, user.userimage);
-                            postg.setAttribute(Attribute1.ptext, user.ptext);
-                            postg.setAttribute(Attribute1.postimage, user.postimage);
-                            postg.setAttribute(Attribute1.ptitle, user.ptitle);
-                            this.mypost.push(postg);
-                         });  
-
 
                     sgfydata.forEach((person) => {
                         const pside2 = this.ownerDocument.createElement(
@@ -77,7 +64,20 @@ class DashBoard extends HTMLElement {
         }
 
         
-        connectedCallback() {
+        async connectedCallback() {
+            const trips = await Trips.get()
+                     trips.forEach((user) => {
+                        const postg = this.ownerDocument.createElement(
+                            "post-card"
+                            ) as PostCard;
+                            postg.setAttribute(Attribute1.username, user.username);
+                            postg.setAttribute(Attribute1.userimage, user.userimage);
+                            postg.setAttribute(Attribute1.ptext, user.ptext);
+                            postg.setAttribute(Attribute1.postimage, user.postimage);
+                            postg.setAttribute(Attribute1.ptitle, user.ptitle);
+                            this.mypost.push(postg);
+                         });  
+
             this.render();
         }
         
