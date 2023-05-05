@@ -1,20 +1,20 @@
 import styles from "./profilescreen.css"
 
-import dbsdata from "../mocks/dbs"
-import psbdata from "../mocks/psb";
-import sgfydata from "../mocks/usdata";
-import trips from "../mocks/trips";
-import unphdata from "../mocks/phonedata";
+import dbsdata from "../../mocks/dbs"
+import psbdata from "../../mocks/psb";
+import sgfydata from "../../mocks/usdata";
+import trips from "../../mocks/trips";
+import unphdata from "../../mocks/phonedata";
 
 
-import profileside, { Attribut } from "../components/Side-profile/index";
-import sugesforyou, { Attri } from "../components/sgfy/index";
-import profilepost, { Attribute2 } from "../components/profilepost/Ppost";
-import profileApp, { Attribute3 } from "../components/profile/profile"
-import underph, {attr} from "../components/undercell/index";
-import { dispatch } from "../store/index";
-import { navigate } from "../store/action";
-import { Screens } from "../types/navigations";
+import profileside, { Attribut } from "../../components/Side-profile/index";
+import sugesforyou, { Attri } from "../../components/sgfy/index";
+import profilepost, { Attribute2 } from "../../components/profilepost/Ppost";
+import profileApp, { Attribute3 } from "../../components/profile/profile"
+import underph, {attr} from "../../components/undercell/index";
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/action";
+import { Screens } from "../../types/navigations";
 
 
 
@@ -101,9 +101,9 @@ class profilescreen extends HTMLElement{
                 dispatch(navigate(Screens.FINDPLAYER))
             } )
 
+            cards.appendChild(newpostbtn)
             cards.appendChild(profilebtn)
             cards.appendChild(searchbtn)
-            cards.appendChild(newpostbtn)
             cards.appendChild(randomp)
         
             const profile = this.ownerDocument.createElement("section")

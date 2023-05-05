@@ -1,17 +1,22 @@
 import styles from "./searchbar.css"
 
-import dbsdata from "../mocks/dbs"
-import psbdata from "../mocks/psb";
-import sgfydata from "../mocks/usdata";
-import unphdata from "../mocks/phonedata";
+import dbsdata from "../../mocks/dbs"
+import psbdata from "../../mocks/psb";
+import trips from "../../mocks/trips";
+import sgfydata from "../../mocks/usdata";
+import unphdata from "../../mocks/phonedata";
 
 
-import profileside, { Attribut } from "../components/Side-profile/index";
-import sugesforyou, { Attri } from "../components/sgfy/index";
-import underph, {attr} from "../components/undercell/index";
-import { dispatch } from "../store/index";
-import { navigate } from "../store/action";
-import { Screens } from "../types/navigations";
+
+
+import profileside, { Attribut } from "../../components/Side-profile/index";
+import PostCard, { Attribute1 } from "../../components/PostCard/post";
+import sugesforyou, { Attri } from "../../components/sgfy/index";
+import underph, {attr} from "../../components/undercell/index";
+import { Screens } from '../../types/navigations';
+import { navigate } from '../../store/action';
+import { dispatch } from '../../store/index';
+
 
 
 
@@ -100,10 +105,9 @@ class sbscreen extends HTMLElement{
             } )
 
 
-
+            cards.appendChild(newpostbtn)
             cards.appendChild(profilebtn)
             cards.appendChild(searchbtn)
-            cards.appendChild(newpostbtn)
             cards.appendChild(randomp)
             
             const pside = this.ownerDocument.createElement("section")

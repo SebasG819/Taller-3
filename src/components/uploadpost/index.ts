@@ -14,8 +14,8 @@ export default class Newpostbtn extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = `
                 <section>
-               <img src="../../src/pics/upload.png">
-                <h2><a href="#">New Post</a></h2>
+               <img src="../../src/pics/home.png">
+                <h2><a href="#">Main</a></h2>
                 </section>
                 `;
                 const css = this.ownerDocument.createElement("style");

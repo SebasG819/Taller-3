@@ -1,8 +1,8 @@
 import "./components/export"
-import "./screens/dashboard"
-import "./screens/findplayer"
-import "./screens/searchbar"
-import "./screens/profilescreen"
+import "./screens/dashboard/dashboard"
+import "./screens/findplayer/findplayer"
+import "./screens/searchbar/searchbar"
+import "./screens/profilescreen/profilescreen"
 import { addObserver, appState } from "./store/index"
 import { Screens } from "./types/navigations"
 

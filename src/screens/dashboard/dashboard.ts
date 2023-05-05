@@ -1,21 +1,21 @@
 import styles from './index.css';
 
-import dbsdata from "../mocks/dbs"
-import psbdata from "../mocks/psb";
-import trips from "../mocks/trips";
-import sgfydata from "../mocks/usdata";
-import unphdata from "../mocks/phonedata";
+import dbsdata from "../../mocks/dbs"
+import psbdata from "../../mocks/psb";
+import trips from "../../mocks/trips";
+import sgfydata from "../../mocks/usdata";
+import unphdata from "../../mocks/phonedata";
 
 
 
 
-import profileside, { Attribut } from "../components/Side-profile/index";
-import PostCard, { Attribute1 } from "../components/PostCard/post";
-import sugesforyou, { Attri } from "../components/sgfy/index";
-import underph, {attr} from "../components/undercell/index";
-import { Screens } from '../types/navigations';
-import { navigate } from '../store/action';
-import { dispatch } from '../store/index';
+import profileside, { Attribut } from "../../components/Side-profile/index";
+import PostCard, { Attribute1 } from "../../components/PostCard/post";
+import sugesforyou, { Attri } from "../../components/sgfy/index";
+import underph, {attr} from "../../components/undercell/index";
+import { Screens } from '../../types/navigations';
+import { navigate } from '../../store/action';
+import { dispatch } from '../../store/index';
 
 
 
@@ -84,6 +84,12 @@ class DashBoard extends HTMLElement {
         render() {
             if (this.shadowRoot) {
 
+                const newpostbtn = this.ownerDocument.createElement("app-newpost")
+                newpostbtn.className = 'cards'
+                newpostbtn.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.DASHBOARD))
+                } )
+
                 const cards = this.ownerDocument.createElement("section")
                 cards.className = `feat`
                 const h1element = this.ownerDocument.createElement("h1")
@@ -101,11 +107,7 @@ class DashBoard extends HTMLElement {
                     dispatch(navigate(Screens.PROFILESCREEN))
                 } )
     
-                const newpostbtn = this.ownerDocument.createElement("app-newpost")
-                newpostbtn.className = 'cards'
-                newpostbtn.addEventListener("click", () =>{
-                    dispatch(navigate(Screens.DASHBOARD))
-                } )
+               
     
     
                 const searchbtn = this.ownerDocument.createElement("app-searchbtn")
@@ -121,10 +123,9 @@ class DashBoard extends HTMLElement {
                     dispatch(navigate(Screens.FINDPLAYER))
                 } )
     
-
+                cards.appendChild(newpostbtn)
                 cards.appendChild(profilebtn)
                 cards.appendChild(searchbtn)
-                cards.appendChild(newpostbtn)
                 cards.appendChild(randomp)
 
                 const pside = this.ownerDocument.createElement("section")
