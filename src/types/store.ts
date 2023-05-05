@@ -10,14 +10,12 @@ export type Appstate= {
 
 export type observer = ({render: () => void} & HTMLElement);
 
-// Actions
 
 export enum AuthAction{
     "LOGIN" = "LOGIN",
     "LOGOUT" = "LOGOUT",
 }
 
-//Interface
 
 export interface logInAction{
     action: AuthAction.LOGIN,

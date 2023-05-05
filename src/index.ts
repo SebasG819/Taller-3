@@ -3,6 +3,9 @@ import "./screens/dashboard/dashboard"
 import "./screens/findplayer/findplayer"
 import "./screens/searchbar/searchbar"
 import "./screens/profilescreen/profilescreen"
+import "./screens/Form/index"
+import "./screens/Register/form2"
+import "./screens/landing/landing"
 import { addObserver, appState } from "./store/index"
 import { Screens } from "./types/navigations"
 
@@ -43,15 +46,27 @@ class AppContainer extends HTMLElement {
                 this.shadowRoot?.appendChild(profile);
 
                 break;
+
+                case Screens.LANDING:
+                const landing = this.ownerDocument.createElement('app-landing');
+                this.shadowRoot?.appendChild(landing);
+
+                break;
+                case Screens.LOGIN:
+                const Login = this.ownerDocument.createElement('app-login');
+                this.shadowRoot?.appendChild(Login);
+
+                break;
+                case Screens.REGISTER:
+                const register = this.ownerDocument.createElement('app-register');
+                this.shadowRoot?.appendChild(register);
+
+                break;
         
             default:
                 break;
         }
-    
 
-        
-       
-       
     }
 }
 
