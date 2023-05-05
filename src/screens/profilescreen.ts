@@ -11,14 +11,15 @@ import profileside, { Attribut } from "../components/Side-profile/index";
 import sugesforyou, { Attri } from "../components/sgfy/index";
 import profilepost, { Attribute2 } from "../components/profilepost/Ppost";
 import profileApp, { Attribute3 } from "../components/profile/profile"
-import bestsale, { attribute } from "../components/bestS/index";
 import underph, {attr} from "../components/undercell/index";
+import { dispatch } from "../store/index";
+import { navigate } from "../store/action";
+import { Screens } from "../types/navigations";
 
 
 
 class profilescreen extends HTMLElement{
 
-    dbs:bestsale[]=[];
     psb:profileside[]=[];
     mypost :profilepost[]=[];
     sgfy:sugesforyou [] = [];
@@ -26,16 +27,7 @@ class profilescreen extends HTMLElement{
 
     constructor(){
         super()
-        this.attachShadow({mode:"open"})
-
-        dbsdata.forEach((person) => {
-            const cards = this.ownerDocument.createElement(
-                "best-sale"
-                ) as bestsale;
-                cards.setAttribute(attribute.titulo, person.title);
-                cards.setAttribute(attribute.icon, person.icon);
-                this.dbs.push(cards);
-             });     
+        this.attachShadow({mode:"open"})     
         psbdata.forEach((person) => {
             const profile = this.ownerDocument.createElement(
                 "profile-card"
@@ -72,16 +64,48 @@ class profilescreen extends HTMLElement{
     
     render() {
         if (this.shadowRoot) {
-
             const cards = this.ownerDocument.createElement("section")
             cards.className = `feat`
             const h1element = this.ownerDocument.createElement("h1")
             h1element.textContent = `GAMERS XP`
             cards.appendChild(h1element)
-            this.dbs.forEach((featuredCards)   =>   {
-            cards.appendChild(featuredCards)
-            });
+            
+            h1element.addEventListener("click", () =>{
+                dispatch(navigate(Screens.DASHBOARD))
+            } )
 
+
+            const profilebtn = this.ownerDocument.createElement("app-profilebtn")
+            profilebtn.className = 'cards'
+            profilebtn.addEventListener("click", () =>{
+                dispatch(navigate(Screens.PROFILESCREEN))
+            } )
+
+            const newpostbtn = this.ownerDocument.createElement("app-newpost")
+            newpostbtn.className = 'cards'
+            newpostbtn.addEventListener("click", () =>{
+                dispatch(navigate(Screens.DASHBOARD))
+            } )
+
+
+            const searchbtn = this.ownerDocument.createElement("app-searchbtn")
+            searchbtn.className = 'cards'
+            searchbtn.addEventListener("click", () =>{
+                dispatch(navigate(Screens.SEARCHBAR))
+            } )
+
+
+            const randomp = this.ownerDocument.createElement("app-rpbtn")
+            randomp.className = 'cards'
+            randomp.addEventListener("click", () =>{
+                dispatch(navigate(Screens.FINDPLAYER))
+            } )
+
+            cards.appendChild(profilebtn)
+            cards.appendChild(searchbtn)
+            cards.appendChild(newpostbtn)
+            cards.appendChild(randomp)
+        
             const profile = this.ownerDocument.createElement("section")
             profile.className = `profile`
             this.psb.forEach((Sidecards)   =>   {
@@ -98,6 +122,10 @@ class profilescreen extends HTMLElement{
 
             const under = this.ownerDocument.createElement("section") 
             under.className = `under`
+
+            const downbar = this.ownerDocument.createElement("my-downbar")
+            downbar.className= "downbar"
+
             this.unph.forEach((undercello) => {
             under.appendChild(undercello)
             });
@@ -113,6 +141,8 @@ class profilescreen extends HTMLElement{
             main.appendChild(profile)
             main.appendChild(postg)
             main.appendChild(midcont)
+            main.appendChild(downbar)
+
             
             midcont.appendChild(profile)
 

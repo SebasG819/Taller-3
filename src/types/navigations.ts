@@ -1,0 +1,9 @@
+export enum Screens {
+    REGISTER = "REGISTER",
+    LOGIN = "LOGIN",
+    DASHBOARD = "DASHBOARD",
+    FINDPLAYER = "FINDPLAYER",
+    PROFILESCREEN = "PROFILESCREEN",
+    SEARCHBAR = "SEARCHBAR",
+
+  }

@@ -9,12 +9,30 @@
     overflow-x: hidden;
 } */
 
-.fondo{
+.fondo {
     background-size: cover;
     position: fixed;
-    height: 1100px;
-    width: 1950px;
-    margin-top: -0.625em;
-    margin-left: -0.625em;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     user-select: none;
+}
+.fondo2{
+    display: none;
+}
+
+@media screen and (max-width: 767px){
+    .fondo{
+        display: none;
+    }
+    .fondo2{
+        background-size: cover;
+        position: fixed;
+        display: block;
+        height: 100%;
+        width: 100%;
+        margin-top: -8px;
+        margin-left: -8px;
+    }
 }

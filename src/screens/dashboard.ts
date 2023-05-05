@@ -9,11 +9,13 @@ import unphdata from "../mocks/phonedata";
 
 
 
-import bestsale, { attribute } from "../components/bestS/index";
 import profileside, { Attribut } from "../components/Side-profile/index";
 import PostCard, { Attribute1 } from "../components/PostCard/post";
 import sugesforyou, { Attri } from "../components/sgfy/index";
 import underph, {attr} from "../components/undercell/index";
+import { Screens } from '../types/navigations';
+import { navigate } from '../store/action';
+import { dispatch } from '../store/index';
 
 
 
@@ -22,7 +24,6 @@ import underph, {attr} from "../components/undercell/index";
 class DashBoard extends HTMLElement {
 
     
-    dbs:bestsale[]=[];
     psb:profileside[]=[];
     mypost :PostCard[]=[];
     sgfy:sugesforyou [] = [];
@@ -33,16 +34,7 @@ class DashBoard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: "open" });   
-
-            dbsdata.forEach((person) => {
-                const cards = this.ownerDocument.createElement(
-                    "best-sale"
-                    ) as bestsale;
-                    cards.setAttribute(attribute.titulo, person.title);
-                    cards.setAttribute(attribute.icon, person.icon);
-                    this.dbs.push(cards);
-                 });     
-
+    
                  psbdata.forEach((person) => {
                     const pside = this.ownerDocument.createElement(
                         "profile-side"
@@ -97,10 +89,43 @@ class DashBoard extends HTMLElement {
                 const h1element = this.ownerDocument.createElement("h1")
                 h1element.textContent = `GAMERS XP`
                 cards.appendChild(h1element)
-                this.dbs.forEach((featuredCards)   =>   {
-                cards.appendChild(featuredCards)
-                });
-               
+                
+                h1element.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.DASHBOARD))
+                } )
+    
+    
+                const profilebtn = this.ownerDocument.createElement("app-profilebtn")
+                profilebtn.className = 'cards'  
+                profilebtn.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.PROFILESCREEN))
+                } )
+    
+                const newpostbtn = this.ownerDocument.createElement("app-newpost")
+                newpostbtn.className = 'cards'
+                newpostbtn.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.DASHBOARD))
+                } )
+    
+    
+                const searchbtn = this.ownerDocument.createElement("app-searchbtn")
+                searchbtn.className = 'cards'
+                searchbtn.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.SEARCHBAR))
+                } )
+    
+    
+                const randomp = this.ownerDocument.createElement("app-rpbtn")
+                randomp.className = 'cards'
+                randomp.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.FINDPLAYER))
+                } )
+    
+
+                cards.appendChild(profilebtn)
+                cards.appendChild(searchbtn)
+                cards.appendChild(newpostbtn)
+                cards.appendChild(randomp)
 
                 const pside = this.ownerDocument.createElement("section")
                 pside.className = `side`
@@ -124,6 +149,12 @@ class DashBoard extends HTMLElement {
                 const rightside = this.ownerDocument.createElement("section")
                 rightside.appendChild(cards)
 
+                const downbar = this.ownerDocument.createElement("my-downbar")
+                downbar.className= "downbar"
+
+                const searchbar = this.ownerDocument.createElement("searchbar-card")
+                searchbar.className= "searchbar"
+
                 this.sgfy.forEach((Sidecards)  => {pside.appendChild(Sidecards)
                 });
                 const GPost = this.ownerDocument.createElement("section")
@@ -136,6 +167,9 @@ class DashBoard extends HTMLElement {
                 main.appendChild(cards)
                 main.appendChild(GPost)
                 main.appendChild(pside)
+                main.appendChild(downbar)
+                main.appendChild(searchbar)
+
                 
                 this.shadowRoot?.appendChild(main)
                 

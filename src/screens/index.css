@@ -18,11 +18,14 @@ h1{
     flex-direction: row;
     justify-content: space-between;
     z-index: -100%;
-    
 }
+.searchbar{
+  display: none;
+}
+
 .gpost{
     position: relative;
-    left: 28%;
+    left: 35%;
 }
 .side
 {

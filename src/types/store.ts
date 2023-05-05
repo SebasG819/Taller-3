@@ -1,6 +1,8 @@
 import {user} from "./psb"
 import {trip} from "./trips"
 
+export type Observer = { render: () => void } & HTMLElement;
+
 export type Appstate= {
     user: user | null,
     post: trip []
