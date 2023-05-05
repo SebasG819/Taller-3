@@ -5,6 +5,9 @@ import { Attribut } from "../../components/btn/buttons";
 import  { attr } from "../../components/butemailandpass/emailandpass";
 import "../../components/buttonlogin/buttlogin"
 import "../../components/butemailandpass/emailandpass"
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/action";
+import { Screens } from "../../types/navigations";
 
 
 
@@ -24,6 +27,9 @@ export class FormLog extends HTMLElement {
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = ``;
+
+                const all = this.ownerDocument.createElement("section")
+                all.className="all"
 
                 const containerg = this.ownerDocument.createElement("section")
                 containerg.className = "big"
@@ -52,14 +58,11 @@ export class FormLog extends HTMLElement {
 
 
                 pdata.forEach((dat) => {
-                    const buttonsess = this.ownerDocument.createElement("btn-sec");
-                   
+                    const buttonsess = this.ownerDocument.createElement("btn-sec");          
                     buttonsess.setAttribute(Attribut.name, dat.name)
                     container.appendChild(buttonsess)
-
-
-
                 })
+
 
                 const ema = this.ownerDocument.createElement("h4")
                 ema.innerText = "Email"
@@ -85,8 +88,12 @@ export class FormLog extends HTMLElement {
                 sec.className = "section2"
                 this.shadowRoot?.appendChild(containerg)
                 const button = this.ownerDocument.createElement("my-butlogin");
-                 button.className = "btn"
-                 container.appendChild(button)
+                button.className = "btn"
+                button.addEventListener("click", () =>{
+                    button.className="btn-signup"
+                   dispatch(navigate(Screens.DASHBOARD))
+                } )
+                container.appendChild(button)
 
                 containerg.appendChild(sec)
 
@@ -109,6 +116,11 @@ export class FormLog extends HTMLElement {
                  Notaccount.innerText = "Create an Account"
                  Notaccount.className = "Notaccount"
                  container.appendChild(Notaccount)
+                 Notaccount.addEventListener("click", () =>{
+                 Notaccount.className="btn-signup"
+                    dispatch(navigate(Screens.REGISTER))
+                } )
+                 
                 
             }
         }

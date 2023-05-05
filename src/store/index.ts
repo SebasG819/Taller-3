@@ -4,7 +4,7 @@ import { Observer } from "../types/store";
 import { reducer } from "./reducer";
 
 const emptyState = {
-    screen: Screens.DASHBOARD,
+    screen: Screens.LANDING,
   };
   
   export let appState = emptyState;

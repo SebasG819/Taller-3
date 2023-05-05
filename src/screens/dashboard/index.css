@@ -11,6 +11,9 @@ h1{
     font-family: 'Press Start 2P', cursive;
     color: aliceblue;
 }
+.downbar{
+  display: none;
+}
 
 .main{
 
@@ -67,6 +70,10 @@ h3{
   
     .side {
       display: none;
+    }
+    .downbar{
+      display:block;
+      display: flex;
     }
   }
 

@@ -22,16 +22,9 @@ export class LandReg extends HTMLElement {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = ``;
 
-        
-
                 const container = this.ownerDocument.createElement("section")
                 container.className = "section1"
                 
-
-                const css = this.ownerDocument.createElement("style")
-                css.innerHTML = styles
-                this.shadowRoot?.appendChild(css)
-
                 const logo = this.ownerDocument.createElement("img")
                 logo.src= '../../../src/pics/Logito.png'
                 logo.className = "img"
@@ -44,6 +37,7 @@ export class LandReg extends HTMLElement {
 
                 const button = this.ownerDocument.createElement("btn-accoun");
                 button.addEventListener("click", () =>{
+                button.className="btn-signup"
                     dispatch(navigate(Screens.REGISTER))
                 } )
                 container.appendChild(button)
@@ -57,8 +51,10 @@ export class LandReg extends HTMLElement {
                  container.appendChild(but)
 
                 this.shadowRoot?.appendChild(container)
-        
-
+                
+                const css = this.ownerDocument.createElement("style")
+                css.innerHTML = styles
+                this.shadowRoot?.appendChild(css)   
             }
         }
     }

@@ -1,3 +1,4 @@
-import { user } from "../types/psb"
-import { trip } from "../types/trips"
+import psbdata from "../mocks/psb";
+import trips from "../mocks/trips";
 import { DataSFY } from "../types/usdata"
+

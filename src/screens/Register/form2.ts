@@ -1,5 +1,10 @@
 import styles from "./register.css"
 import  { att } from "../../components/btnregis/buttonregis";
+import "../../components/export"
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/action";
+import { Screens } from "../../types/navigations";
+
 
 export class FormReg extends HTMLElement {
     
@@ -67,7 +72,11 @@ export class FormReg extends HTMLElement {
                 container.appendChild(confirmpassword)
 
                 const button = this.ownerDocument.createElement("btn-account");
-                 container.appendChild(button)
+                button.addEventListener("click", () =>{
+                    button.className="btn-signup"
+                        dispatch(navigate(Screens.DASHBOARD))
+                    } )
+                container.appendChild(button)
                 
                 this.shadowRoot?.appendChild(containerg)
         
