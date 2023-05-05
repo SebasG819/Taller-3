@@ -46,9 +46,9 @@ export class FormLog extends HTMLElement {
                 container.appendChild(Check)
 
                 const logo = this.ownerDocument.createElement("img")
-            logo.src="../../../src/pics/Logito.png"
-            logo.className = "logo"
-            container.appendChild(logo)
+                logo.src="../../../src/pics/Logito.png"
+                logo.className = "logo"
+                container.appendChild(logo)
 
 
                 pdata.forEach((dat) => {
@@ -93,9 +93,9 @@ export class FormLog extends HTMLElement {
                 
                 
                 const banner = this.ownerDocument.createElement("img")
-           banner.src="../../../src/pics/BannerLogin.png"
-            banner.className = "banner"
-            sec.appendChild(banner)
+                banner.src="../../../src/pics/BannerLogin.png"
+                banner.className = "banner"
+                sec.appendChild(banner)
 
 
 

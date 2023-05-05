@@ -1,4 +1,7 @@
 import styles from "./landing.css"
+import "../../components/export"
+import "../../components/buttonlanding2/buttonlogin"
+import "../../components/buttonlanding/buttonlanding"
 import { dispatch } from "../../store/index";
 import { navigate } from "../../store/action";
 import { Screens } from "../../types/navigations";
@@ -29,10 +32,10 @@ export class LandReg extends HTMLElement {
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css)
 
-                const img = this.ownerDocument.createElement("img")
-                img.src="../../../src/pics/Logito.png"
-                img.className = "img"
-                container.appendChild(img)
+                const logo = this.ownerDocument.createElement("img")
+                logo.src= '../../../src/pics/Logito.png'
+                logo.className = "img"
+                container.appendChild(logo)
 
                 const register = this.ownerDocument.createElement("h1")
                 register.innerText = "WELCOME"
@@ -40,18 +43,23 @@ export class LandReg extends HTMLElement {
 
 
                 const button = this.ownerDocument.createElement("btn-accoun");
-                container.appendChild(button);
                 button.addEventListener("click", () =>{
+                    dispatch(navigate(Screens.REGISTER))
+                } )
+                container.appendChild(button)
+            
+                 
+
+                 const but = this.ownerDocument.createElement("button-log");
+                 but.addEventListener("click", () =>{
                     dispatch(navigate(Screens.LOGIN))
                 } )
-            
-                const but = this.ownerDocument.createElement("button-log");
-                 
+                 container.appendChild(but)
+
                 this.shadowRoot?.appendChild(container)
         
 
             }
         }
     }
-    
 customElements.define("app-landing", LandReg);

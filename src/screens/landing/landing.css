@@ -2,9 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: ("../../../src/image/fondo.jpeg");
+    background-image: url("../../../src/pics/Logito.png");
 }
 
 h1{
     color: white;
+}
+.img{
+    z-index: 100;
 }
