@@ -42,10 +42,6 @@ export class createpost extends HTMLElement {
                 container.appendChild(subtittle)
 
 
-                const buttpost = this.ownerDocument.createElement("my-butlogin")
-                
-                container.appendChild(buttpost)
-
                 const button = this.ownerDocument.createElement("btn-account");
                 button.addEventListener("click", () =>{
                     button.className="btn-signup"
