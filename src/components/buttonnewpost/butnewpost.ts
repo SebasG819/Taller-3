@@ -28,5 +28,5 @@ import styles from "./butpost.css"
     }
 }
 
-customElements.define("my-butlogin",butpost);
+customElements.define("my-butpost",butpost);
 export default butpost;

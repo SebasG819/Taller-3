@@ -5,6 +5,7 @@ export enum Screens {
     FINDPLAYER = "FINDPLAYER",
     PROFILESCREEN = "PROFILESCREEN",
     SEARCHBAR = "SEARCHBAR",
-    LANDING = "LANDING"
+    LANDING = "LANDING",
+    SHARE = "SHARE",
 
   }

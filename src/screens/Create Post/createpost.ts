@@ -1,4 +1,4 @@
-import styles from "./register.css"
+import styles from "./createpost.css"
 import  { att } from "../../components/btnregis/buttonregis";
 import "../../components/export"
 import { dispatch } from "../../store/index";
@@ -33,16 +33,23 @@ export class createpost extends HTMLElement {
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css)
 
-                const tittle = this.ownerDocument.createElement("h1")
+                const tittle = this.ownerDocument.createElement("h2")
                 tittle.innerText = "Crea una nueva publicación"
                 container.appendChild(tittle)
 
-                const subtittle = this.ownerDocument.createElement("h1")
+                const img = this.ownerDocument.createElement("img")
+                img.src="../../../src/pics/imgicon.png"
+                img.className = "logo"
+                container.appendChild(img)
+
+                const subtittle = this.ownerDocument.createElement("h3")
                 subtittle.innerText = "Arrastra las fotos o videos aquí"
                 container.appendChild(subtittle)
 
+                
 
-                const button = this.ownerDocument.createElement("btn-account");
+
+                const button = this.ownerDocument.createElement("my-butpost");
                 button.addEventListener("click", () =>{
                     button.className="btn-signup"
                         dispatch(navigate(Screens.DASHBOARD))
@@ -56,4 +63,4 @@ export class createpost extends HTMLElement {
         }
     }
     
-customElements.define("create-post", createpost);
+customElements.define("app-post", createpost);

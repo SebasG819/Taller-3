@@ -4,7 +4,7 @@ import { Observer } from "../types/store";
 import { reducer } from "./reducer";
 
 const emptyState = {
-    screen: Screens.LANDING,
+    screen: Screens.SHARE,
   };
   
   export let appState = emptyState;
