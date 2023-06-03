@@ -12,6 +12,11 @@
     
 }
 
+input{
+    display: flex;
+    flex-direction: column;
+}
+
 h1{
     color: white;
     font-size: 54px;
@@ -67,6 +72,7 @@ h4{
     height: 100%;
     width: 100%;
     margin-left: -1%;  
+    margin-bottom: -23%;
 }
 h5{
     font-family:Arial, Helvetica, sans-serif;

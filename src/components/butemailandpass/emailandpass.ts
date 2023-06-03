@@ -1,5 +1,8 @@
 import styles from "./input.css"
 import Firebase from "../../utils/firebase"
+import { dispatch } from "../../store";
+import { navigate } from "../../store/action";
+import { Screens } from "../../types/navigations";
 
 const Valuser = {
     email:"",
@@ -61,14 +64,23 @@ attributeChangedCallback(
                 css.innerHTML = styles
                 this.shadowRoot?.appendChild(css)
 
+            const ema = this.ownerDocument.createElement("h4")
+            ema.innerText = "Email"
+            this.shadowRoot?.appendChild(ema)
+
             const log = this.ownerDocument.createElement("input")
             log.placeholder = "Email"
             log.type = "Email"
+            
             log.addEventListener(
                 "change",
                 (e: any) => (Valuser.email = e.target.value)
               );
             this.shadowRoot?.appendChild(log)
+
+            const pass = this.ownerDocument.createElement("h4")
+            pass.innerText = "Password"
+            this.shadowRoot?.appendChild(pass)
 
             const passw = this.ownerDocument.createElement("input")
             passw.placeholder = "Password"
@@ -82,6 +94,10 @@ attributeChangedCallback(
             const button= this.ownerDocument.createElement("button");
             button.innerText = "Iniciar sesión"
             button.addEventListener("click", this.Funfire)    
+            button.addEventListener("click", () =>{
+                button.className="btn-signup"
+               dispatch(navigate(Screens.DASHBOARD))
+            } )
             this.shadowRoot?.appendChild(button)
 
 

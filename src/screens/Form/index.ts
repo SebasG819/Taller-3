@@ -64,36 +64,26 @@ export class FormLog extends HTMLElement {
                 })
 
 
-                const ema = this.ownerDocument.createElement("h4")
-                ema.innerText = "Email"
-                container.appendChild(ema)
+                
                 
                 const email = this.ownerDocument.createElement("email-pass")
-                email.setAttribute(attr.placeholder, "email")
-                email.setAttribute(attr.type, "email")
+                
                 container.appendChild(email)
+                
+                
+                
+            
 
-                const pass = this.ownerDocument.createElement("h4")
-                pass.innerText = "Password"
-                container.appendChild(pass)
+                
                 
 
-                const password = this.ownerDocument.createElement("email-pass")
-                password.setAttribute(attr.placeholder, "Password")
-                password.setAttribute(attr.type, "password")
-                container.appendChild(password)
-
+                
             
                 const sec = this.ownerDocument.createElement("section")
                 sec.className = "section2"
                 this.shadowRoot?.appendChild(containerg)
-                const button = this.ownerDocument.createElement("my-butlogin");
-                button.className = "btn"
-                button.addEventListener("click", () =>{
-                    button.className="btn-signup"
-                   dispatch(navigate(Screens.DASHBOARD))
-                } )
-                container.appendChild(button)
+                
+                
 
                 containerg.appendChild(sec)
 
