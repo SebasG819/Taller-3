@@ -1,4 +1,10 @@
 import styles from "./input.css"
+import Firebase from "../../utils/firebase"
+
+const Valuser = {
+    email:"",
+    password: "",
+};
 export enum attr {
     "placeholder" = "placeholder",
     "type" = "type",
@@ -42,6 +48,11 @@ attributeChangedCallback(
         this.render();
     }
 
+    async Funfire(){
+        Firebase.Userlogin(Valuser)
+    }
+
+
     render(){
         if(this.shadowRoot){
             this.shadowRoot.innerHTML= "";
@@ -51,9 +62,28 @@ attributeChangedCallback(
                 this.shadowRoot?.appendChild(css)
 
             const log = this.ownerDocument.createElement("input")
-            log.placeholder = `${this.placeholder}`
-            log.type = `${this.type}`
+            log.placeholder = "Email"
+            log.type = "Email"
+            log.addEventListener(
+                "change",
+                (e: any) => (Valuser.email = e.target.value)
+              );
             this.shadowRoot?.appendChild(log)
+
+            const passw = this.ownerDocument.createElement("input")
+            passw.placeholder = "Password"
+            passw.type = "Password"
+            passw.addEventListener(
+                "change",
+                (e: any) => (Valuser.password = e.target.value)
+              );
+            this.shadowRoot?.appendChild(passw)
+
+            const button= this.ownerDocument.createElement("button");
+            button.innerText = "Iniciar sesión"
+            button.addEventListener("click", this.Funfire)    
+            this.shadowRoot?.appendChild(button)
+
 
         }
     }

@@ -1,10 +1,22 @@
 
+import { onAuthStateChanged } from "firebase/auth";
 import { Screens } from "../types/navigations"
 import { Observer } from "../types/store";
 import { reducer } from "./reducer";
+import { navigate } from "./action";
+import { auth } from "../utils/firebase";
+
+onAuthStateChanged(auth,(user) => {
+  if (user) {
+     user.email //!== null ? dispatch(setUserCredentials(user.email)) : '';
+    dispatch(navigate(Screens.DASHBOARD));
+  } else {
+    dispatch(navigate(Screens.REGISTER))
+  }
+});
 
 const emptyState = {
-    screen: Screens.SHARE,
+    screen: Screens.REGISTER,
   };
   
   export let appState = emptyState;
