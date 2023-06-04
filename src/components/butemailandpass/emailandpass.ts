@@ -96,7 +96,6 @@ attributeChangedCallback(
             button.addEventListener("click", this.Funfire)    
             button.addEventListener("click", () =>{
                 button.className="btn-signup"
-               dispatch(navigate(Screens.DASHBOARD))
             } )
             this.shadowRoot?.appendChild(button)
 
@@ -105,7 +104,6 @@ attributeChangedCallback(
     }
 
 }
-
 
 customElements.define("email-pass",emailandpass);
 export default emailandpass;

@@ -1,6 +1,9 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp} from "firebase/app";
 import firebaseconfig from "./firebaseconfig";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
+import { dispatch } from "../store";
+import { navigate } from "../store/action";
+import { Screens } from "../types/navigations";
 
 const app = initializeApp(firebaseconfig);
 export const auth = getAuth(app);
@@ -19,6 +22,7 @@ const UserRegister = async ({
         password
       );
       console.log(userCredential.user);
+      dispatch(navigate(Screens.DASHBOARD))
       return true;
     } catch (error: any) {
       const errorCode = error.code;
@@ -34,6 +38,7 @@ const UserRegister = async ({
   }: {
     email: string;
     password: string;
+    
   })  => {
     setPersistence(auth,browserSessionPersistence)
     .then(() => {

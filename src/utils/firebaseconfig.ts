@@ -1,12 +1,11 @@
 export default  {
-
-    apiKey: "AIzaSyD5atlvo82dlcS9WDM4OuYCrzRQYvV7vIk",
-    authDomain: "taller-dca.firebaseapp.com",
-    projectId: "taller-dca",
-    storageBucket: "taller-dca.appspot.com",
-    messagingSenderId: "288715094440",
-    appId: "1:288715094440:web:279ca5520721a00c29859d",
-    measurementId: "G-WE2SEYJ77X",
-  
+  apiKey: "AIzaSyAneBWI2euHDyXdavPvXoJYy2IpB99TiRQ",
+  authDomain: "parcial-8e3e4.firebaseapp.com",
+  databaseURL: "https://parcial-8e3e4-default-rtdb.firebaseio.com",
+  projectId: "parcial-8e3e4",
+  storageBucket: "parcial-8e3e4.appspot.com",
+  messagingSenderId: "108098335495",
+  appId: "1:108098335495:web:e611b50b7e95eef256cba2",
+  measurementId: "G-WYTQD74KJN"
   };
   
