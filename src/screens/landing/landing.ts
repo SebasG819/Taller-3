@@ -45,6 +45,7 @@ export class LandReg extends HTMLElement {
                  
 
                  const but = this.ownerDocument.createElement("button-log");
+                 but.className="but"
                  but.addEventListener("click", () =>{
                     dispatch(navigate(Screens.LOGIN))
                 } )

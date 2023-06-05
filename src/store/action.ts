@@ -11,4 +11,10 @@ export const setUserCredentials = (user: string) => {
     type: "SETUSER",
     payload: user,
   };
-};
+//   export const setUserCredentials = (user: string) => {
+//   return {
+//     type: "SETUSER",
+//     payload: user,
+//   };
+// };
+}

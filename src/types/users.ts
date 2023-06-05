@@ -4,4 +4,5 @@ export interface users {
     description: string;
     gameprofile: string;
     email: string;
+    uid: string;
 }

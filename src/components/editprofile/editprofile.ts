@@ -1,11 +1,10 @@
-import styles from "./createpost.css"
-import "../../components/export"
+import styles from "./editeprofile.css"
 import { dispatch } from "../../store/index";
 import { navigate } from "../../store/action";
 import { Screens } from "../../types/navigations";
 
 
-export default class postpage extends HTMLElement {
+export default class editprofile extends HTMLElement {
     
     constructor() {
         super();
@@ -33,42 +32,52 @@ export default class postpage extends HTMLElement {
                 this.shadowRoot?.appendChild(css)
 
                 const tittle = this.ownerDocument.createElement("h2")
-                tittle.innerText = "Crea una nueva publicación"
+                tittle.innerText = "Edit your profile"
                 container.appendChild(tittle)
 
                 const titulo = this.ownerDocument.createElement("h3")
-                titulo.innerText = "Escribe el título del Post"
+                titulo.innerText = "Write your new name"
                 container.appendChild(titulo)
 
                 const titulos = this.ownerDocument.createElement("input")
-                titulos.placeholder = "Escribe el título del Post"
+                titulos.placeholder = "Write your new name"
                 titulos.type = "text"
                 this.shadowRoot?.appendChild (titulos);
                 container.appendChild(titulos)
                 
+                const gameprofesion = this.ownerDocument.createElement("h3")
+                gameprofesion.innerText = "Write your game profesion"
+                container.appendChild(gameprofesion)
+
+                const gameprofesions = this.ownerDocument.createElement("input")
+                gameprofesions.placeholder = "Write your game profesion"
+                gameprofesions.type = "text"
+                this.shadowRoot?.appendChild (gameprofesions);
+                container.appendChild(gameprofesions)
+
                 const desc = this.ownerDocument.createElement("h3")
-                desc.innerText = "Escribe la descripción de tu post"
+                desc.innerText = "Write your profile description"
                 container.appendChild(desc)
 
                 const descs = this.ownerDocument.createElement("input")
-                descs.placeholder = "Descripción de tu post"
+                descs.placeholder = "Write your profile description"
                 descs.type = "text"
                 this.shadowRoot?.appendChild (descs);
                 container.appendChild(descs)
 
                 const subtittle = this.ownerDocument.createElement("h3")
-                subtittle.innerText = "Pon el url de tu foto o video aquí"
+                subtittle.innerText = "Write or paste your profile picture URL HERE"
                 container.appendChild(subtittle)
 
                 const url = this.ownerDocument.createElement("input")
-                url.placeholder = "Pega el url"
+                url.placeholder = "Paste URL HERE"
                 url.type = "url"
                 this.shadowRoot?.appendChild (url);
                 container.appendChild(url)
 
 
                 const button = this.ownerDocument.createElement("button");
-                button.innerText = "Sube tu post"
+                button.innerText = "Update your profile"
                 button.addEventListener("click", () =>{
                         dispatch(navigate(Screens.DASHBOARD))
                     } )
@@ -79,4 +88,4 @@ export default class postpage extends HTMLElement {
         }
     }
     
-customElements.define("app-post", postpage);
+customElements.define("app-editprofile", editprofile);

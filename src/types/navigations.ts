@@ -7,4 +7,5 @@ export enum Screens {
   SEARCHBAR = "SEARCHBAR",
   LANDING = "LANDING",
   SHARE = "SHARE",
+  EDITPROFILE = "EDITPROFILE"
 }

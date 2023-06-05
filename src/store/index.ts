@@ -9,10 +9,12 @@ import { navigate, setUserCredentials } from "./action";
 const emptyState = {
     screen: Screens.LANDING,
     user: {
-      uid: "",
-      username: "",
-      email: "",
+      name: "",
       image: "",
+      description: "",
+      gameprofile: "",
+      email: "",
+      uid: "",
     },
     post:[],
     users: [],
@@ -25,7 +27,6 @@ const emptyState = {
       dispatch(navigate(Screens.LANDING));
     }
   });
-  
   
   export let appState = emptyState;
   

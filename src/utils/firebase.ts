@@ -49,6 +49,7 @@ const UserRegister = async ({
       const errorMessage = error.message;
       console.log(errorCode,errorMessage);
     })
+    
   };
 
   export default {UserRegister, Userlogin};
