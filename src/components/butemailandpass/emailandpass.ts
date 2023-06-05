@@ -52,7 +52,7 @@ attributeChangedCallback(
     }
 
     async Funfire(){
-        Firebase.Userlogin(Valuser)
+        await Firebase.Userlogin(Valuser)
     }
 
 

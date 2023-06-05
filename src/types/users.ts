@@ -1,8 +1,7 @@
 export interface users {
     name: string;
     image: string;
-    udescription: string;
-    profesional: string;
+    description: string;
+    gameprofile: string;
     email: string;
-    password: string;
 }

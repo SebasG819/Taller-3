@@ -8,16 +8,23 @@ import { navigate, setUserCredentials } from "./action";
 
 const emptyState = {
     screen: Screens.LANDING,
-    user: [],
+    user: {
+      uid: "",
+      username: "",
+      email: "",
+      image: "",
+    },
+    post:[],
+    users: [],
   };
-  // onAuthStateChanged(auth, (user) => {
-  //   if (user) {
-  //     user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
-  //     dispatch(navigate(Screens.DASHBOARD));
-  //   } else {
-  //     dispatch(navigate(Screens.LANDING));
-  //   }
-  // });
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
+      dispatch(navigate(Screens.DASHBOARD));
+    } else {
+      dispatch(navigate(Screens.LANDING));
+    }
+  });
   
   
   export let appState = emptyState;

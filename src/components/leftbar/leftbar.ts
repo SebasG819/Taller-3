@@ -62,6 +62,11 @@ export default class leftbar extends HTMLElement{
            randomp.addEventListener("click", () =>{
                dispatch(navigate(Screens.FINDPLAYER))
            } )
+           const createpost = this.ownerDocument.createElement("app-createpost")
+           createpost.className = 'cards'
+           createpost.addEventListener("click", () =>{
+               dispatch(navigate(Screens.SHARE))
+           } )
 
             const logout = this.ownerDocument.createElement("app-logout")
             logout.className = 'cards'
@@ -74,6 +79,7 @@ export default class leftbar extends HTMLElement{
            cards.appendChild(profilebtn)
            cards.appendChild(searchbtn)
            cards.appendChild(randomp)
+           cards.appendChild(createpost)
            cards.appendChild(logout )
 
            this.shadowRoot.appendChild(cards)

@@ -37,18 +37,40 @@ export class createpost extends HTMLElement {
                 tittle.innerText = "Crea una nueva publicación"
                 container.appendChild(tittle)
 
-                const img = this.ownerDocument.createElement("img")
-                img.src="../../../src/pics/imgicon.png"
-                img.className = "logo"
-                container.appendChild(img)
+                const titulo = this.ownerDocument.createElement("h3")
+                titulo.innerText = "Escribe el título del Post"
+                container.appendChild(titulo)
+
+                const titulos = this.ownerDocument.createElement("input")
+                titulos.placeholder = "Escribe el título del Post"
+                titulos.type = "text"
+                this.shadowRoot?.appendChild (titulos);
+                container.appendChild(titulos)
+                
+                const desc = this.ownerDocument.createElement("h3")
+                desc.innerText = "Escribe la descripción de tu post"
+                container.appendChild(desc)
+
+                const descs = this.ownerDocument.createElement("input")
+                descs.placeholder = "Descripción de tu post"
+                descs.type = "text"
+                this.shadowRoot?.appendChild (descs);
+                container.appendChild(descs)
 
                 const subtittle = this.ownerDocument.createElement("h3")
-                subtittle.innerText = "Arrastra las fotos o videos aquí"
+                subtittle.innerText = "Pon el url de tu foto o video aquí"
                 container.appendChild(subtittle)
 
-                const button = this.ownerDocument.createElement("my-butpost");
+                const url = this.ownerDocument.createElement("input")
+                url.placeholder = "Pega el url"
+                url.type = "url"
+                this.shadowRoot?.appendChild (url);
+                container.appendChild(url)
+
+
+                const button = this.ownerDocument.createElement("button");
+                button.innerText = "Sube tu post"
                 button.addEventListener("click", () =>{
-                    button.className="btn-signup"
                         dispatch(navigate(Screens.DASHBOARD))
                     } )
                 container.appendChild(button)
