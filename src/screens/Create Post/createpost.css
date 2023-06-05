@@ -24,11 +24,11 @@
 h2{
     font-size: xx-large;
     margin-top: -15%;
-    font-family: 'Fjalla One', sans-serif;
 }
 
 h3{
     font-size: x-large;
+<<<<<<< HEAD
     font-family: 'Fjalla One', sans-serif;
 }
 
@@ -165,4 +165,6 @@ transition-duration: .3s;
 }
 
 
+=======
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
 }

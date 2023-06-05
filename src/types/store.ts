@@ -14,19 +14,14 @@ export type observer = ({render: () => void} & HTMLElement);
 
 
 export enum AuthAction{
-    "ADD" = "ADD",
-    "GET" = "GET",
+    "LOGIN" = "LOGIN",
+    "LOGOUT" = "LOGOUT",
 }
 
 
-export interface AddUserAction {
-    action: AuthAction.ADD,
+export interface logInAction{
+    action: AuthAction.LOGIN,
     payload: user
-  };
-  
-  export interface GetUserAction {
-    action: AuthAction.GET,
-    payload: user[]
 }
 
-export type Actions =  | GetUserAction | AddUserAction;
+export type Actions = logInAction;

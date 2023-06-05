@@ -3,22 +3,27 @@ import { onAuthStateChanged } from "firebase/auth";
 import { Screens } from "../types/navigations"
 import { Observer } from "../types/store";
 import { reducer } from "./reducer";
-import { navigate } from "./action";
 import { auth } from "../utils/firebase";
-
-onAuthStateChanged(auth,(user) => {
-  if (user) {
-     user.email //!== null ? dispatch(setUserCredentials(user.email)) : '';
-    dispatch(navigate(Screens.DASHBOARD));
-  } else {
-    dispatch(navigate(Screens.REGISTER))
-  }
-});
+import { navigate, setUserCredentials } from "./action";
 
 const emptyState = {
+<<<<<<< HEAD
     screen: Screens.SHARE,
     postup: []
+=======
+    screen: Screens.LANDING,
+    user: [],
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
   };
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     user.uid !== null ? dispatch(setUserCredentials(user.uid)) : '';
+  //     dispatch(navigate(Screens.DASHBOARD));
+  //   } else {
+  //     dispatch(navigate(Screens.LANDING));
+  //   }
+  // });
+  
   
   export let appState = emptyState;
   

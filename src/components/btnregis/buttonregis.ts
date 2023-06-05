@@ -1,9 +1,10 @@
 import styles from "./input.css";
 import Firebase from "../../utils/firebase"
+import { dispatch } from "../../store";
+import { navigate } from "../../store/action";
+import { Screens } from "../../types/navigations";
 
-
-
-const Valuser = {
+const users = {
     name: "",
     email:"",
     password: "",
@@ -52,7 +53,7 @@ attributeChangedCallback(
     }
 
     async Funfiree(){
-        Firebase.UserRegister(Valuser)
+        Firebase.UserRegister(users)
     }
 
     render(){
@@ -66,7 +67,7 @@ attributeChangedCallback(
             name.type = "Name"
             name.addEventListener(
                 "change",
-                (e: any) => (Valuser.name = e.target.value)
+                (e: any) => (users.name = e.target.value)
               );
 
             const lemail = this.ownerDocument.createElement('label');
@@ -76,7 +77,7 @@ attributeChangedCallback(
             email.type = "Email"
             email.addEventListener(
                 "change",
-                (e: any) => (Valuser.email = e.target.value)
+                (e: any) => (users.email = e.target.value)
               );
 
             const lpassword = this.ownerDocument.createElement('label');
@@ -86,7 +87,7 @@ attributeChangedCallback(
             password.type = "Password"
             password.addEventListener(
                 "change",
-                (e: any) => (Valuser.password = e.target.value)
+                (e: any) => (users.password = e.target.value)
               );
 
             const Cpassword = this.ownerDocument.createElement('label');
@@ -96,14 +97,13 @@ attributeChangedCallback(
             CCpassword.type = "Password"
             CCpassword.addEventListener(
                 "change",
-                (e: any) => (Valuser.password = e.target.value)
+                (e: any) => (users.password = e.target.value)
               );
             
               const button = this.ownerDocument.createElement('button')
               button.innerText = "Create account"
               button.addEventListener("click", () =>{
                 button.addEventListener("click", this.Funfiree)    
-                
                   } )
                   
               
@@ -120,8 +120,6 @@ attributeChangedCallback(
                 this.shadowRoot?.appendChild(Cpassword);
                 this.shadowRoot?.appendChild(CCpassword);
                 this.shadowRoot?.appendChild(button);
-            
-
         }
     }
 

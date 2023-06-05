@@ -44,10 +44,19 @@ export class createpost extends HTMLElement {
                 tittle.innerText = "Crea una nueva publicación"
                 container.appendChild(tittle)
 
+<<<<<<< HEAD
+=======
+                const img = this.ownerDocument.createElement("img")
+                img.src="../../../src/pics/imgicon.png"
+                img.className = "logo"
+                container.appendChild(img)
+
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
                 const subtittle = this.ownerDocument.createElement("h3")
-                subtittle.innerText = "Pon el url de tu foto o video aquí"
+                subtittle.innerText = "Arrastra las fotos o videos aquí"
                 container.appendChild(subtittle)
 
+<<<<<<< HEAD
                 const url = this.ownerDocument.createElement("input")
                 url.placeholder = "Pega el url"
                 url.type = "url"
@@ -75,7 +84,11 @@ export class createpost extends HTMLElement {
                 const button = this.ownerDocument.createElement("button");
                 button.innerText = "Sube tu post"
                 button.addEventListener("click",this.Userpostup)
+=======
+                const button = this.ownerDocument.createElement("my-butpost");
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
                 button.addEventListener("click", () =>{
+                    button.className="btn-signup"
                         dispatch(navigate(Screens.DASHBOARD))
                     } )
                 container.appendChild(button)

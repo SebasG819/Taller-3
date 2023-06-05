@@ -57,51 +57,32 @@ export class FormLog extends HTMLElement {
                 container.appendChild(logo)
 
 
-                pdata.forEach((dat) => {
-                    const buttonsess = this.ownerDocument.createElement("btn-sec");          
-                    buttonsess.setAttribute(Attribut.name, dat.name)
-                    container.appendChild(buttonsess)
-                })
-
-
-                
-                
+                // pdata.forEach((dat) => {
+                //     const buttonsess = this.ownerDocument.createElement("btn-sec");          
+                //     buttonsess.setAttribute(Attribut.name, dat.name)
+                //     container.appendChild(buttonsess)
+                // })
+      
                 const email = this.ownerDocument.createElement("email-pass")
                 
                 container.appendChild(email)
                 
-                
-                
-            
-
-                
-                
-
-                
-            
                 const sec = this.ownerDocument.createElement("section")
                 sec.className = "section2"
                 this.shadowRoot?.appendChild(containerg)
-                
-                
 
                 containerg.appendChild(sec)
 
-                
-                
                 const banner = this.ownerDocument.createElement("img")
                 banner.src="../../../src/pics/BannerLogin.png"
                 banner.className = "banner"
                 sec.appendChild(banner)
 
-
-
                  const Notregis = this.ownerDocument.createElement("h5")
                  Notregis.innerText = "Not registered yet?"
                  Notregis.className = "Notregis"
                  container.appendChild(Notregis)
-                 
- 
+
                  const Notaccount = this.ownerDocument.createElement("h5")
                  Notaccount.innerText = "Create an Account"
                  Notaccount.className = "Notaccount"

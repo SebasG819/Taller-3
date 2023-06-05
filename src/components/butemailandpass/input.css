@@ -1,6 +1,7 @@
 
 
 input {
+<<<<<<< HEAD
     border: none;
     outline: none;
     border-radius: 15px;
@@ -76,6 +77,28 @@ input {
     font-size: 20px;
     margin-left: 38%;
 }  
+=======
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  transition: 300ms ease-in-out;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+}
+
+input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696,
+             -13px -13px 100px #ffffff;
+}
+
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
 button {
   font-size: 17px;
   padding: 0.5em 2em;
@@ -85,7 +108,11 @@ button {
   color: white;
   border-radius: 4px;
   margin-top: 12%;
+<<<<<<< HEAD
   margin-left: 25%;
+=======
+  margin-left: 20px;
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
  }
  
  button:hover {
@@ -97,5 +124,14 @@ button {
   transform: translate(0em, 0.2em);
  }
 
+<<<<<<< HEAD
 }
 
+=======
+ h4{
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 150%;
+  color: white;
+  font-size: 20px;
+}   
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603

@@ -1,8 +1,14 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp} from "firebase/app";
 import firebaseconfig from "./firebaseconfig";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
+<<<<<<< HEAD
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { postup } from "../types/postup";
+=======
+import { dispatch } from "../store";
+import { navigate } from "../store/action";
+import { Screens } from "../types/navigations";
+>>>>>>> ef5784b3c872df0611384597e932d3014aa45603
 
 const app = initializeApp(firebaseconfig);
 const db = getFirestore(app);
@@ -23,6 +29,7 @@ const UserRegister = async ({
         password
       );
       console.log(userCredential.user);
+      dispatch(navigate(Screens.DASHBOARD))
       return true;
     } catch (error: any) {
       const errorCode = error.code;
@@ -38,6 +45,7 @@ const UserRegister = async ({
   }: {
     email: string;
     password: string;
+    
   })  => {
     setPersistence(auth,browserSessionPersistence)
     .then(() => {
