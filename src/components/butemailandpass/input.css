@@ -11,7 +11,7 @@ input {
     display: flex;
     flex-direction: column;
     margin: 20px;
-
+    margin-left: 25%;
   }
   
   input:focus {
@@ -29,8 +29,10 @@ input {
     background: #811DA1;
     color: white;
     border-radius: 4px;
-    margin-top: 12%;
-    margin-left: 20px;
+    margin-top: -5%;
+    margin-left: 25%;
+    
+    
    }
    
    button:hover {
@@ -47,4 +49,53 @@ input {
     font-size: 150%;
     color: white;
     font-size: 20px;
+    margin-left: 30%;
 }   
+
+@media (max-width: 767px) {
+
+  input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #ccc;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-left: 25%;
+
+  }
+
+  h4{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 150%;
+    color: white;
+    font-size: 20px;
+    margin-left: 38%;
+}  
+button {
+  font-size: 17px;
+  padding: 0.5em 2em;
+  border: transparent;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+  background: #811DA1;
+  color: white;
+  border-radius: 4px;
+  margin-top: 12%;
+  margin-left: 25%;
+ }
+ 
+ button:hover {
+  background: rgb(124, 3, 172);
+  background: linear-gradient(90deg, #811DA1 0%, rgba(811DA1) 100%);
+ }
+ 
+ button:active {
+  transform: translate(0em, 0.2em);
+ }
+
+}
+

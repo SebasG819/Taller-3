@@ -1,8 +1,12 @@
 import { initializeApp } from "firebase/app";
 import firebaseconfig from "./firebaseconfig";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, setPersistence, browserSessionPersistence } from "firebase/auth";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
+import { postup } from "../types/postup";
 
 const app = initializeApp(firebaseconfig);
+const db = getFirestore(app);
+
 export const auth = getAuth(app);
 
 const UserRegister = async ({
@@ -46,4 +50,13 @@ const UserRegister = async ({
     })
   };
 
-  export default {UserRegister, Userlogin};
+  const savephPostDInDB = async (postup:postup) => {
+    try {
+        const docRef = await addDoc(collection(db, "postup"),postup);
+        console.log("Document written with ID: ", docRef.id);
+      } catch (e) {
+        console.error("Error adding document: ", e);
+      }
+}
+
+  export default {UserRegister, Userlogin, savephPostDInDB};

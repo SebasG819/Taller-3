@@ -1,3 +1,4 @@
+import { postup } from "./postup";
 import {user} from "./psb"
 import {trip} from "./trips"
 
@@ -6,6 +7,7 @@ export type Observer = { render: () => void } & HTMLElement;
 export type Appstate= {
     user: user | null,
     post: trip []
+    postup: postup[]
 }
 
 export type observer = ({render: () => void} & HTMLElement);

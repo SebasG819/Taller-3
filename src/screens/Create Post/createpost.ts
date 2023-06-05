@@ -4,8 +4,13 @@ import "../../components/export"
 import { dispatch } from "../../store/index";
 import { navigate } from "../../store/action";
 import { Screens } from "../../types/navigations";
+import { postup } from "../../types/postup";
+import firebase from "../../utils/firebase";
 
-
+const formpostup : postup = {
+    url: "",
+    text: "",
+}
 export class createpost extends HTMLElement {
     
     constructor() {
@@ -17,7 +22,9 @@ export class createpost extends HTMLElement {
         this.render();
     }
     
-        
+    async Userpostup (){firebase.savephPostDInDB(formpostup);}
+  
+    
         render() {
             if (this.shadowRoot) {
                 this.shadowRoot.innerHTML = ``;
@@ -37,8 +44,6 @@ export class createpost extends HTMLElement {
                 tittle.innerText = "Crea una nueva publicación"
                 container.appendChild(tittle)
 
-    
-
                 const subtittle = this.ownerDocument.createElement("h3")
                 subtittle.innerText = "Pon el url de tu foto o video aquí"
                 container.appendChild(subtittle)
@@ -46,11 +51,19 @@ export class createpost extends HTMLElement {
                 const url = this.ownerDocument.createElement("input")
                 url.placeholder = "Pega el url"
                 url.type = "url"
+                url.addEventListener('change', (s: any) => {
+                    console.log(s.target.value)
+                    formpostup.url = s.target.value
+                })
                 this.shadowRoot?.appendChild (url);
                 container.appendChild(url)
 
                 const desc = this.ownerDocument.createElement("h3")
                 desc.innerText = "Escribe la descripción de tu post"
+                desc.addEventListener('change', (s: any) => {
+                    console.log(s.target.value)
+                    formpostup.text = s.target.value
+                })
                 container.appendChild(desc)
 
                 const descs = this.ownerDocument.createElement("input")
@@ -59,11 +72,9 @@ export class createpost extends HTMLElement {
                 this.shadowRoot?.appendChild (descs);
                 container.appendChild(descs)
 
-                
-                
-
                 const button = this.ownerDocument.createElement("button");
                 button.innerText = "Sube tu post"
+                button.addEventListener("click",this.Userpostup)
                 button.addEventListener("click", () =>{
                         dispatch(navigate(Screens.DASHBOARD))
                     } )

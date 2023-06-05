@@ -17,6 +17,7 @@ onAuthStateChanged(auth,(user) => {
 
 const emptyState = {
     screen: Screens.SHARE,
+    postup: []
   };
   
   export let appState = emptyState;

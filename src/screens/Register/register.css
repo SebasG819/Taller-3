@@ -7,6 +7,7 @@
     width:80vw ;
     height: 44.8vw ;
     border-radius: 8px;    
+    margin-top: 0%;
 }
 
 h1{
@@ -36,26 +37,35 @@ h1{
 .containerg{
     font-family: 'Fjalla One', sans-serif;
 }
-@media only screen and (max-width: 768px) {
+
+@media (max-width: 767px) {
     .section1{
-        width: 90vw;
-    }
+        background: linear-gradient(#A11FC1ff, #231843ff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+         color: white;
+         width: 90vw ;
+         height: 164.8vw ;
+         border-radius: 8px;    
+         margin-top: 0%;
+         margin-left: 3%;
+         margin-top: 10%;
+   }
 
-    h1{
-        font-size: 2em;
-        margin-left: -20%;
+   h1{
+    font-size: 55px;
+    margin-left: -40%;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 200%;
     }
-
     .img{
-        width: 20%;
-        margin-left: 25%;
+        position: absolute;
+        width: 22%;
+        margin-left: 60%;
         margin-top: 5%;
+    
     }
 
-    .banner{
-        width: 80vw;
-    }
-    .section2{
-        display: none;
-    }
-}
+  }
